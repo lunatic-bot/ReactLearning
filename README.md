@@ -10,7 +10,7 @@ This repository documents my learning journey with React.js. I am following tuto
 
 ## Acknowledgments
 
-Special thanks to **Prashant Sir** and the **Complete Coding** YouTube channel for providing these valuable React tutorials. You can find the channel [here](https://www.youtube.com/channel/UCXgGY0wkgOzynnHvSEVmE3A).
+Special thanks to **Prashant Sir** and the **Complete Coding** YouTube channel for providing these valuable React tutorials. You can find the channel [here](https://www.youtube.com/channel/UC7uzuZJIYzcxV9JJ1yAtHHg).
 
 ---
 
