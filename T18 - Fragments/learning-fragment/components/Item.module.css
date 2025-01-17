@@ -1,8 +1,12 @@
 .fd-item{
-    background-color:aquamarine;
+    /* background-color:antiquewhite; */
 }
 
 .food-span {
     font-weight: 500;
     color: brown;
+}
+
+.button {
+    float: right;
 }
