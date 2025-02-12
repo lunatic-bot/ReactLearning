@@ -14,8 +14,8 @@ function AddTodo({ onNewItem }) {
 
   const handleAddButton = () => {
     onNewItem(todoName, todoDate);
-    setTodoDate();
-    setTodoName();
+    setTodoDate("");
+    setTodoName("");
   };
 
   return (
@@ -30,7 +30,7 @@ function AddTodo({ onNewItem }) {
           />
         </div>
         <div className="col-4">
-          <input type="date" value={dueDate} onChange={handleDateChange} />
+          <input type="date" value={todoDate} onChange={handleDateChange} />
         </div>
         <div className="col-2">
           <button
