@@ -13,7 +13,15 @@ function AddTodo({ onNewItem }) {
     setTodoDate(event.target.value);
   };
 
-  const handleAddButton = () => {
+  // const handleAddButton = () => {
+  //   onNewItem(todoName, todoDate);
+  //   setTodoDate("");
+  //   setTodoName("");
+  // };
+
+  const handleAddButton = (event) => {
+    // console.log(event);
+    event.preventDefault();
     onNewItem(todoName, todoDate);
     setTodoDate("");
     setTodoName("");
@@ -21,7 +29,7 @@ function AddTodo({ onNewItem }) {
 
   return (
     <div className="container text-center">
-      <div className="row todo-row">
+      <form action="" className="row todo-row" onSubmit={handleAddButton}>
         <div className="col-6">
           <input
             type="text"
@@ -35,14 +43,15 @@ function AddTodo({ onNewItem }) {
         </div>
         <div className="col-2">
           <button
-            type="button"
+            type="submit"
+            // type="button"
             className="btn btn-success todo-button"
-            onClick={handleAddButton}
+            // onClick={handleAddButton}
           >
             <IoIosAddCircle />
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
