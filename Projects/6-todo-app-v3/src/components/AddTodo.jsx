@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { IoIosAddCircle } from "react-icons/io";
 
 function AddTodo({ onNewItem }) {
-  const [todoName, setTodoName] = useState("");
-  const [todoDate, setTodoDate] = useState("");
+  // const [todoName, setTodoName] = useState("");
+  // const [todoDate, setTodoDate] = useState("");
+  const todoNameElement = useRef();
+  const dueDateElement = useRef();
 
-  const handleNameChange = (event) => {
-    setTodoName(event.target.value);
-  };
+  // const handleNameChange = (event) => {
+  //   setTodoName(event.target.value);
+  //   noOfUpdates.current += 1;
+  // };
 
-  const handleDateChange = (event) => {
-    setTodoDate(event.target.value);
-  };
+  // const handleDateChange = (event) => {
+  //   setTodoDate(event.target.value);
+  //   console.log(`no of updates are: ${noOfUpdates.current}`);
+  // };
 
   // const handleAddButton = () => {
   //   onNewItem(todoName, todoDate);
@@ -22,9 +26,13 @@ function AddTodo({ onNewItem }) {
   const handleAddButton = (event) => {
     // console.log(event);
     event.preventDefault();
+    const todoName = todoNameElement.current.value;
+    const todoDate = dueDateElement.current.value;
+    todoNameElement.current.value = "";
+    dueDateElement.current.value = "";
     onNewItem(todoName, todoDate);
-    setTodoDate("");
-    setTodoName("");
+    // setTodoDate("");
+    // setTodoName("");
   };
 
   return (
@@ -33,13 +41,19 @@ function AddTodo({ onNewItem }) {
         <div className="col-6">
           <input
             type="text"
+            ref={todoNameElement}
             placeholder="Enter Todo Here"
-            value={todoName}
-            onChange={handleNameChange}
+            // value={todoName}
+            // onChange={handleNameChange}
           />
         </div>
         <div className="col-4">
-          <input type="date" value={todoDate} onChange={handleDateChange} />
+          <input
+            type="date"
+            ref={dueDateElement}
+            // value={todoDate}
+            // onChange={handleDateChange}
+          />
         </div>
         <div className="col-2">
           <button
