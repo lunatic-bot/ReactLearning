@@ -5,7 +5,6 @@ import { useContext } from "react";
 
 const TodoItems = () => {
   const { todoItems, deleteItem } = useContext(TodoItemsContext);
-  // console.log(todoItems);
 
   return (
     <>
